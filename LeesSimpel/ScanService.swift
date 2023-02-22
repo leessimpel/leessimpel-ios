@@ -1,10 +1,3 @@
-//
-//  ScanService.swift
-//  IkEetKip
-//
-//  Created by Niels Hoogendoorn on 14/02/2023.
-//
-
 import AVFoundation
 import SwiftUI
 import os.log

@@ -1,10 +1,3 @@
-//
-//  StartView.swift
-//  IkEetKip
-//
-//  Created by Niels Hoogendoorn on 10/02/2023.
-//
-
 import SwiftUI
 
 struct StartView: View {
@@ -42,7 +35,11 @@ struct StartView: View {
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                     NavigationLink {
-                        DataScanner()
+                        #if targetEnvironment(simulator)
+                            ProcessingView(image:nil)
+                        #else
+                            DataScanner()
+                        #endif
                     } label: {
                         Text("Maak een scan ")
                     }

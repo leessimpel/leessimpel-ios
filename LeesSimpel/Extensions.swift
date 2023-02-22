@@ -1,10 +1,3 @@
-//
-//  Extensions.swift
-//  IkEetKip
-//
-//  Created by Erwin Russel on 11/02/2023.
-//
-
 import Foundation
 import SwiftUI
 

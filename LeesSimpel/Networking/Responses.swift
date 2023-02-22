@@ -1,10 +1,3 @@
-//
-//  Responses.swift
-//  IkEetKip
-//
-//  Created by Niels Hoogendoorn on 20/02/2023.
-//
-
 import Foundation
 
 struct SentenceItem: Codable, Identifiable {

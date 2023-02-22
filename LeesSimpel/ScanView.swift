@@ -1,10 +1,3 @@
-//
-//  ScanView.swift
-//  IkEetKip
-//
-//  Created by Niels Hoogendoorn on 10/02/2023.
-//
-
 import SwiftUI
 import AVKit
 import VisionKit

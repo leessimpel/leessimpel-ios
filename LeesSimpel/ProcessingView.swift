@@ -1,17 +1,10 @@
-//
-//  ProcessingView.swift
-//  IkEetKip
-//
-//  Created by Niels Hoogendoorn on 11/02/2023.
-//
-
 import SwiftUI
 import Vision
 
 struct ProcessingView: View {
     @State var response: QueryResponse?
     @State var error: Error?
-    let promptService = PromptService()
+    let backendService = BackendService()
     let image: UIImage?
     #if DEBUG
     @State var errorViewButtonIsPresented: Bool = false
@@ -53,11 +46,17 @@ struct ProcessingView: View {
                 }
                 .task { @MainActor in
                     do {
+                        
+#if !targetEnvironment(simulator)
                         guard let image else {
                             return
                         }
                         let transcript = await analyze(image: image)
-                        let response = try await promptService.sendPrompt(transcript: transcript)
+#else
+                        let transcript = "this is a fake transcript from a fake letter that we use when running in the simulator"
+#endif
+                        
+                        let response = try await backendService.summarizeTranscript(transcript: transcript)
                         self.response = response
                     } catch {
                         #if DEBUG

@@ -21,8 +21,7 @@
 		A0037C6829A6BEBC00622F58 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0037C6529A6BEBC00622F58 /* ButtonStyles.swift */; };
 		A0037C6929A6BEBC00622F58 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0037C6629A6BEBC00622F58 /* Modifiers.swift */; };
 		A0037C6C29A6BED900622F58 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0037C6A29A6BED900622F58 /* Responses.swift */; };
-		A0037C6D29A6BED900622F58 /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0037C6B29A6BED900622F58 /* OpenAI.swift */; };
-		A0037C6F29A6BEE800622F58 /* PromptService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0037C6E29A6BEE800622F58 /* PromptService.swift */; };
+		A0037C6F29A6BEE800622F58 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0037C6E29A6BEE800622F58 /* BackendService.swift */; };
 		A0880C2229A694D500607336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0880C2129A694D500607336 /* Assets.xcassets */; };
 		A0880C2529A694D500607336 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0880C2429A694D500607336 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -41,8 +40,7 @@
 		A0037C6529A6BEBC00622F58 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonStyles.swift; path = LeesSimpel/Utilities/ButtonStyles.swift; sourceTree = "<group>"; };
 		A0037C6629A6BEBC00622F58 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Modifiers.swift; path = LeesSimpel/Utilities/Modifiers.swift; sourceTree = "<group>"; };
 		A0037C6A29A6BED900622F58 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Responses.swift; path = Networking/Responses.swift; sourceTree = "<group>"; };
-		A0037C6B29A6BED900622F58 /* OpenAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenAI.swift; path = Networking/OpenAI.swift; sourceTree = "<group>"; };
-		A0037C6E29A6BEE800622F58 /* PromptService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromptService.swift; path = TextRecognition/PromptService.swift; sourceTree = "<group>"; };
+		A0037C6E29A6BEE800622F58 /* BackendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendService.swift; path = TextRecognition/BackendService.swift; sourceTree = "<group>"; };
 		A0880C1A29A694D500607336 /* LeesSimpel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeesSimpel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0880C2129A694D500607336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0880C2429A694D500607336 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -82,8 +80,7 @@
 		A0880C1C29A694D500607336 /* LeesSimpel */ = {
 			isa = PBXGroup;
 			children = (
-				A0037C6E29A6BEE800622F58 /* PromptService.swift */,
-				A0037C6B29A6BED900622F58 /* OpenAI.swift */,
+				A0037C6E29A6BEE800622F58 /* BackendService.swift */,
 				A0037C6A29A6BED900622F58 /* Responses.swift */,
 				A0037C4B29A6BD4000622F58 /* CameraService.swift */,
 				A0037C4D29A6BD4000622F58 /* CameraView.swift */,
@@ -185,9 +182,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0037C6F29A6BEE800622F58 /* PromptService.swift in Sources */,
+				A0037C6F29A6BEE800622F58 /* BackendService.swift in Sources */,
 				A0037C6729A6BEBC00622F58 /* LottieRepresentable.swift in Sources */,
-				A0037C6D29A6BED900622F58 /* OpenAI.swift in Sources */,
 				A0037C6829A6BEBC00622F58 /* ButtonStyles.swift in Sources */,
 				A0037C6929A6BEBC00622F58 /* Modifiers.swift in Sources */,
 				A0037C5629A6BD4100622F58 /* ScanService.swift in Sources */,

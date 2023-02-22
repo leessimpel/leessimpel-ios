@@ -1,10 +1,3 @@
-//
-//  Modifiers.swift
-//  IkEetKip
-//
-//  Created by Niels Hoogendoorn on 20/02/2023.
-//
-
 import SwiftUI
 
 struct HiddenNavBarModifier: ViewModifier {
