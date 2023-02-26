@@ -75,15 +75,12 @@
 		A0880C1C29A694D500607336 /* LeesSimpel */ = {
 			isa = PBXGroup;
 			children = (
-				A6EB312629AB8D4E00D66E37 /* TextRecognition */,
+				A6EB312E29AB93AE00D66E37 /* Scan */,
 				A6EB312229AB8D4E00D66E37 /* Utilities */,
 				A6EB311F29AB8D4500D66E37 /* Networking */,
-				A6EB312C29AB8E4E00D66E37 /* ImageScanner.swift */,
-				A0037C4929A6BD3F00622F58 /* Extensions.swift */,
 				A0037C5429A6BD4100622F58 /* LeesSimpel.swift */,
 				A0037C5029A6BD4000622F58 /* ProcessingView.swift */,
 				A0037C4E29A6BD4000622F58 /* ResultView.swift */,
-				A0037C4C29A6BD4000622F58 /* ScanView.swift */,
 				A0037C5229A6BD4100622F58 /* StartView.swift */,
 				A0880C2129A694D500607336 /* Assets.xcassets */,
 				A0880C2329A694D500607336 /* Preview Content */,
@@ -102,6 +99,7 @@
 		A6EB311F29AB8D4500D66E37 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A6EB312729AB8D4E00D66E37 /* BackendService.swift */,
 				A6EB312029AB8D4500D66E37 /* Responses.swift */,
 			);
 			path = Networking;
@@ -110,6 +108,7 @@
 		A6EB312229AB8D4E00D66E37 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A0037C4929A6BD3F00622F58 /* Extensions.swift */,
 				A6EB312329AB8D4E00D66E37 /* LottieRepresentable.swift */,
 				A6EB312429AB8D4E00D66E37 /* Modifiers.swift */,
 				A6EB312529AB8D4E00D66E37 /* ButtonStyles.swift */,
@@ -117,12 +116,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		A6EB312629AB8D4E00D66E37 /* TextRecognition */ = {
+		A6EB312E29AB93AE00D66E37 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
-				A6EB312729AB8D4E00D66E37 /* BackendService.swift */,
+				A6EB312C29AB8E4E00D66E37 /* ImageScanner.swift */,
+				A0037C4C29A6BD4000622F58 /* ScanView.swift */,
 			);
-			path = TextRecognition;
+			path = Scan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
