@@ -41,15 +41,6 @@ struct DataScanner: View {
                             .padding(.horizontal, 24)
                             .padding(.vertical, 8)
                             .modifier(StyledText(weight: .bold, color: .white))
-
-                        Spacer()
-                        Button {
-                            isPresenting = false
-                        } label: {
-                            Text("Maak foto")
-                        }
-                        .buttonStyle(LargeButton(color: .white, textColor: Color(.darkText)))
-                        .padding(.horizontal, 16)
                     }.zIndex(100)
                     ZStack {
                         ImageScanner(isPresenting: $isPresenting, uiImages: $uiImages)
