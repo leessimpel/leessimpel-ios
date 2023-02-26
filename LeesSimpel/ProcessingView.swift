@@ -1,11 +1,37 @@
 import SwiftUI
 import Vision
 
+struct ImageProcessInput {
+    let index: Int
+    let image: UIImage
+
+    init(_ data: (Int, UIImage)) {
+        self.index = data.0
+        self.image = data.1
+    }
+}
+
+struct ImageProcessOutput: Comparable {
+    static func < (lhs: ImageProcessOutput, rhs: ImageProcessOutput) -> Bool {
+        lhs.index < rhs.index
+    }
+
+    let index: Int
+    let transcript: String
+}
+
+extension Array where Element == ImageProcessOutput {
+    var collected: String {
+        self.sorted().map(\.transcript).joined(separator: "\n")
+    }
+
+}
+
 struct ProcessingView: View {
     @State var response: QueryResponse?
     @State var error: Error?
     let backendService = BackendService()
-    let image: UIImage?
+    let images: [UIImage]
     #if DEBUG
     @State var errorViewButtonIsPresented: Bool = false
     #endif
@@ -48,10 +74,23 @@ struct ProcessingView: View {
                     do {
                         
 #if !targetEnvironment(simulator)
-                        guard let image else {
-                            return
+                        let transcript = await withTaskGroup(of: ImageProcessOutput.self) { taskGroup in
+
+                            let enumaratedImages: [(Int, UIImage)] = Array(images.enumerated())
+                            let data = enumaratedImages.map(ImageProcessInput.init(_:))
+                            for item in data {
+                                taskGroup.addTask {
+                                    await analyze(data: item)
+                                }
+                            }
+
+                            var outputCollection = [ImageProcessOutput]()
+                            for await result in taskGroup {
+                                outputCollection.append(result)
+                            }
+                            return outputCollection.collected
                         }
-                        let transcript = await analyze(image: image)
+                        
 #else
                         let transcript = "this is a fake transcript from a fake letter that we use when running in the simulator"
 #endif
@@ -82,7 +121,7 @@ struct ProcessingView: View {
         .modifier(HiddenNavBarModifier())
     }
 
-    func analyze(image: UIImage) async -> String {
+    func analyze(data: ImageProcessInput) async -> ImageProcessOutput {
         await withCheckedContinuation { continuation in
             let textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { [continuation] (request, error) in
                 var transcript:String = ""
@@ -98,16 +137,16 @@ struct ProcessingView: View {
                     transcript += "\n"
                 }
                 print(transcript)
-                continuation.resume(returning: transcript)
+                continuation.resume(returning: .init(index: data.index, transcript: transcript))
             })
 
             textRecognitionRequest.recognitionLevel = .accurate
             textRecognitionRequest.usesLanguageCorrection = true
 
-            guard let cgImage = image.cgImage else {
+            guard let cgImage = data.image.cgImage else {
 
                 print("Failed to get cgimage from input image")
-                continuation.resume(returning: "")
+                continuation.resume(returning: .init(index: -1, transcript: ""))
                 return
             }
 
@@ -124,7 +163,7 @@ struct ProcessingView: View {
 
 struct ProcessingView_Previews: PreviewProvider {
     static var previews: some View {
-        ProcessingView(image: nil)
+        ProcessingView(images: [])
     }
 }
 

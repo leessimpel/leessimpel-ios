@@ -4,54 +4,78 @@ import VisionKit
 
 struct DataScanner: View {
     @State var isPresenting: Bool = false
-    @State var uiImage: UIImage? = nil
+    @State var uiImages: [UIImage] = []
     @State var showNextScreen: Bool = false
 
+    @State var showNextAction: Bool = false
     @State var showResult: Bool = false
 
     var body: some View {
             ZStack(alignment: .top) {
-                VStack {
-                    Text("Maak een foto van je brief")
-                        .font(.largeTitle)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 24)
-                        .padding(.vertical, 8)
-                        .modifier(StyledText(weight: .bold, color: .white))
+                if showNextAction {
+                    VStack(spacing: 24) {
+                        Spacer()
+                        Text("Scans gemaakt: \(uiImages.count)")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 16)
 
-                    Spacer()
-                    Button {
-                        isPresenting = false
-                    } label: {
-                        Text("Maak foto")
+                        Button("Nog een scan maken") {
+                            showNextAction = false
+                        }
+                        .buttonStyle(LargeButton(color: .blue, textColor: .white))
+
+                        Button("Ik ben klaar met scannen!") {
+                            showNextScreen = true
+                        }
+                        .buttonStyle(LargeButton(color: .green, textColor: .white))
+                        Spacer()
                     }
-                    .buttonStyle(LargeButton(color: .white, textColor: Color(.darkText)))
-                    .padding(.horizontal, 16)
-                }.zIndex(100)
-                ZStack {
-                    ImageScanner(isPresenting: $isPresenting, uiIMage: $uiImage)
+                    .padding()
+
+                } else {
                     VStack {
-                        Color.black.opacity(0.3).blur(radius: 0)
-                            .edgesIgnoringSafeArea(.all)
-                            .reverseMask {
-                                Color.white
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.all, 16)
-                                    .aspectRatio(210/297, contentMode: .fit)
-                                    .clipped()
-                            }
+                        Text("Maak een foto van je brief")
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 24)
+                            .padding(.vertical, 8)
+                            .modifier(StyledText(weight: .bold, color: .white))
+
+                        Spacer()
+                        Button {
+                            isPresenting = false
+                        } label: {
+                            Text("Maak foto")
+                        }
+                        .buttonStyle(LargeButton(color: .white, textColor: Color(.darkText)))
+                        .padding(.horizontal, 16)
+                    }.zIndex(100)
+                    ZStack {
+                        ImageScanner(isPresenting: $isPresenting, uiImages: $uiImages)
+                        VStack {
+                            Color.black.opacity(0.3).blur(radius: 0)
+                                .edgesIgnoringSafeArea(.all)
+                                .reverseMask {
+                                    Color.white
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.all, 16)
+                                        .aspectRatio(210/297, contentMode: .fit)
+                                        .clipped()
+                                }
+                        }
                     }
+                    .edgesIgnoringSafeArea(.all)
                 }
-                .edgesIgnoringSafeArea(.all)
             }
             .onAppear {
                 self.isPresenting = true
             }
-            .onChange(of: uiImage, perform: { _ in
-                showNextScreen = true
+            .onChange(of: uiImages, perform: { _ in
+                self.showNextAction = true
             })
         .background(
-            NavigationLink(destination: ProcessingView(image: uiImage), isActive: $showNextScreen, label: {
+            NavigationLink(destination: ProcessingView(images: uiImages), isActive: $showNextScreen, label: {
                 EmptyView()
             })
             .labelsHidden()

@@ -10,7 +10,7 @@ import WeScan
 
 struct ImageScanner: UIViewControllerRepresentable {
     @Binding var isPresenting: Bool
-    @Binding var uiIMage: UIImage?
+    @Binding var uiImages: [UIImage]
 
     func makeUIViewController(context: Context) -> CameraScannerViewController {
         let vc = CameraScannerViewController()
@@ -28,12 +28,15 @@ struct ImageScanner: UIViewControllerRepresentable {
     }
 
     class Coordinator: NSObject, CameraScannerViewOutputDelegate {
+        deinit {
+            print("deinittting")
+        }
         func captureImageFailWithError(error: Error) {
             assertionFailure("error: \(error.localizedDescription)")
         }
 
         func captureImageSuccess(image: UIImage, withQuad quad: WeScan.Quadrilateral?) {
-            imageScanner.uiIMage = image
+            imageScanner.uiImages.append(image)
         }
 
         let imageScanner: ImageScanner
