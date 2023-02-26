@@ -24,6 +24,7 @@
 		A0037C6F29A6BEE800622F58 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0037C6E29A6BEE800622F58 /* BackendService.swift */; };
 		A0880C2229A694D500607336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0880C2129A694D500607336 /* Assets.xcassets */; };
 		A0880C2529A694D500607336 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0880C2429A694D500607336 /* Preview Assets.xcassets */; };
+		A6EB311E29AB875000D66E37 /* WeScan in Frameworks */ = {isa = PBXBuildFile; productRef = A6EB311D29AB875000D66E37 /* WeScan */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0037C3429A697E900622F58 /* Lottie in Frameworks */,
+				A6EB311E29AB875000D66E37 /* WeScan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +125,7 @@
 			name = LeesSimpel;
 			packageProductDependencies = (
 				A0037C3329A697E900622F58 /* Lottie */,
+				A6EB311D29AB875000D66E37 /* WeScan */,
 			);
 			productName = LeesSimpel;
 			productReference = A0880C1A29A694D500607336 /* LeesSimpel.app */;
@@ -155,6 +158,7 @@
 			mainGroup = A0880C1129A694D500607336;
 			packageReferences = (
 				A0037C3229A697E900622F58 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				A6EB311C29AB875000D66E37 /* XCRemoteSwiftPackageReference "WeScan" */,
 			);
 			productRefGroup = A0880C1B29A694D500607336 /* Products */;
 			projectDirPath = "";
@@ -325,7 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LeesSimpel/Preview Content\"";
-				DEVELOPMENT_TEAM = D7J749SZ5K;
+				DEVELOPMENT_TEAM = 7RH5TXLNA8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "LeesSimpel scans user documents as part of the app";
@@ -340,7 +344,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lucasmeijer.LeesSimpel;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.simpel.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -358,7 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LeesSimpel/Preview Content\"";
-				DEVELOPMENT_TEAM = D7J749SZ5K;
+				DEVELOPMENT_TEAM = 7RH5TXLNA8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "LeesSimpel scans user documents as part of the app";
@@ -373,7 +377,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lucasmeijer.LeesSimpel;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.simpel.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -413,6 +417,14 @@
 				minimumVersion = 4.1.0;
 			};
 		};
+		A6EB311C29AB875000D66E37 /* XCRemoteSwiftPackageReference "WeScan" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/WeScan";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -420,6 +432,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A0037C3229A697E900622F58 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		A6EB311D29AB875000D66E37 /* WeScan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6EB311C29AB875000D66E37 /* XCRemoteSwiftPackageReference "WeScan" */;
+			productName = WeScan;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
