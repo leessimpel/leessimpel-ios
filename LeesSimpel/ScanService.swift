@@ -97,5 +97,5 @@ fileprivate extension Image.Orientation {
     }
 }
 
-fileprivate let logger = Logger(subsystem: "com.apple.swiftplaygroundscontent.capturingphotos", category: "DataModel")
+fileprivate let logger = Logger(subsystem: "nl.simpel.app.capturingphotos", category: "DataModel")
 
