@@ -29,7 +29,7 @@ struct DataScanner: View {
                     .padding(.horizontal, 16)
                 }.zIndex(100)
                 ZStack {
-                    CameraView(isPresenting: $isPresenting, uiIMage: $uiImage)
+                    ImageScanner(isPresenting: $isPresenting, uiIMage: $uiImage)
                     VStack {
                         Color.black.opacity(0.3).blur(radius: 0)
                             .edgesIgnoringSafeArea(.all)
