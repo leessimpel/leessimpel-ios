@@ -23,6 +23,7 @@
 		A6EB312A29AB8D4E00D66E37 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB312529AB8D4E00D66E37 /* ButtonStyles.swift */; };
 		A6EB312B29AB8D4E00D66E37 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB312729AB8D4E00D66E37 /* BackendService.swift */; };
 		A6EB312D29AB8E4E00D66E37 /* ImageScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB312C29AB8E4E00D66E37 /* ImageScanner.swift */; };
+		A6EB313029AB95E900D66E37 /* 4Gf9fVo6Kq.json in Resources */ = {isa = PBXBuildFile; fileRef = A6EB312F29AB95E900D66E37 /* 4Gf9fVo6Kq.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A6EB312529AB8D4E00D66E37 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		A6EB312729AB8D4E00D66E37 /* BackendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
 		A6EB312C29AB8E4E00D66E37 /* ImageScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScanner.swift; sourceTree = "<group>"; };
+		A6EB312F29AB95E900D66E37 /* 4Gf9fVo6Kq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 4Gf9fVo6Kq.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				A0037C4E29A6BD4000622F58 /* ResultView.swift */,
 				A0037C5229A6BD4100622F58 /* StartView.swift */,
 				A0880C2129A694D500607336 /* Assets.xcassets */,
+				A6EB312F29AB95E900D66E37 /* 4Gf9fVo6Kq.json */,
 				A0880C2329A694D500607336 /* Preview Content */,
 			);
 			path = LeesSimpel;
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6EB313029AB95E900D66E37 /* 4Gf9fVo6Kq.json in Resources */,
 				A0880C2529A694D500607336 /* Preview Assets.xcassets in Resources */,
 				A0880C2229A694D500607336 /* Assets.xcassets in Resources */,
 			);
